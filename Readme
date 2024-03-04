@@ -7,4 +7,4 @@ Zhong, Shengze, Parinya Punpongsanon, Daisuke Iwai, and Kosuke Sato. "Topology o
 
 Currently, minor bugs may exist, thus the code will be updated soon.
 Known issue:
-1. Only square optimization space (i.e., resolution a*a) can be handled, for simple coding.
+Only square optimization space (i.e., resolution a*a) can be handled, for simple coding.
