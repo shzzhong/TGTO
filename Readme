@@ -1,6 +1,6 @@
 The code used in the paper "Topology optimization with text-guided stylization" has now been uploaded.
 The code should work well in various environment setups. 
-As for the clip installation, please follow: https://github.com/openai/CLIP
+As for the CLIP installation, please follow: https://github.com/openai/CLIP
 
 Currently, minor bugs may exist, thus the code will be updated soon.
 Known issue: Only square optimization space (i.e., resolution a*a) can be handled, for simple coding.
