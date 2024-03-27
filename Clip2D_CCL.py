@@ -184,12 +184,12 @@ def FEA(nelx, nely, KE, x, penal, iK, jK, edofMat, f, free, epoch, U_last):
     ce = (np.dot(U[edofMat].reshape((nelx * nely, 8)), KE) * U[edofMat].reshape((nelx * nely, 8))).sum(1)
     dc = (((-penal * x.cpu().detach().numpy() ** (penal - 1) * (Emax - Emin)).flatten()) * ce).reshape(bs, 1)
 
-    # Construct object function. Penalty function is very unsatable and often fall into local minimum. Checked'
+    # Construct object function
     compliance = (((Emin + x.cpu().detach().numpy() ** penal * (Emax - Emin)).flatten()) * ce).sum()
     return U, U_last, dc, compliance
 
 
-# Stress computation. Just a minor test for visualization, not mentioned in the paper, correctness not guaranteed.
+# Stress computation. Just a minor test for visualization, not mentioned in the paper, correctness not guaranteed
 def stress_cal(x, nelx, nely, B, C, U, edofMat):
     U = U.reshape(U.shape[0], 1)
 
@@ -221,7 +221,7 @@ def stress_cal(x, nelx, nely, B, C, U, edofMat):
     return stress_final
 
 
-# Stress computation. Just a minor test for visualization, not mentioned in the paper, correctness not guaranteed.
+# Stress computation. Just a minor test for visualization, not mentioned in the paper, correctness not guaranteed
 def stress_cal_t(x, nelx, nely, B, C, U, edofMat):
     if not isinstance(U, torch.Tensor):
         U = torch.tensor(U, dtype=torch.float32, requires_grad=True).to(device)
